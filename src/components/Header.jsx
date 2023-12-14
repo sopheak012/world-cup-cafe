@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import Menu from "./Icons/Menu";
 import X from "./Icons/X";
@@ -20,7 +20,9 @@ const Header = () => {
       >
         <div className="logo">
           <Link
-            to="/"
+            to="hero"
+            smooth
+            duration={500}
             className="text-3xl font-semibold uppercase transition-all ease-in duration-500 hover:text-[#fe4039]"
           >
             World Cup Cafe
@@ -30,16 +32,16 @@ const Header = () => {
         <div className="navigation">
           <nav>
             <div className="hidden md:flex">
-              <Link to="/#about" className="mr-2 md:mr-4">
-                Our History
+              <Link to="about" smooth duration={500} className="mr-2 md:mr-4">
+                Our Journey
               </Link>
-              <Link to="/#menu" className="mx-2 md:mx-4">
+              <Link to="menu" smooth duration={500} className="mx-2 md:mx-4">
                 Menu
               </Link>
-              <Link to="/#info" className="mx-2 md:mx-4">
+              <Link to="info" smooth duration={500} className="mx-2 md:mx-4">
                 Info
               </Link>
-              <Link to="/#contact" className="mx-2 md:ml-4">
+              <Link to="contact" smooth duration={500} className="mx-2 md:ml-4">
                 Contact
               </Link>
             </div>
@@ -47,16 +49,16 @@ const Header = () => {
             <div onClick={handleClick} className="md:hidden">
               {!nav ? <Menu /> : <X />}
               <div className={!nav ? "mobile-menu" : "mobile-menu active"}>
-                <Link to="/#about" className="mt-8 mb-4">
-                  Our History
+                <Link to="about" smooth duration={500} className="mt-8 mb-4">
+                  Our Journey
                 </Link>
-                <Link to="/#menu" className="my-4">
+                <Link to="menu" smooth duration={500} className="my-4">
                   Menu
                 </Link>
-                <Link to="/#info" className="my-4">
+                <Link to="info" smooth duration={500} className="my-4">
                   Info
                 </Link>
-                <Link to="/#contact" className="mt-4 mb-8">
+                <Link to="contact" smooth duration={500} className="mt-4 mb-8">
                   Contact
                 </Link>
               </div>

@@ -4,7 +4,7 @@ import Hero from "./Hero";
 import About from "./About";
 import { motion } from "framer-motion";
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = () => {
   return (
     <>
       <Header />
@@ -15,9 +15,7 @@ const Layout = ({ pageTitle, children }) => {
         exit={{ opacity: 0, y: -100 }}
         transition={{ duration: 1, delay: 0.75 }}
         viewport={{ once: true }}
-      >
-        {children}
-      </motion.main>
+      ></motion.main>
       <About />
     </>
   );
