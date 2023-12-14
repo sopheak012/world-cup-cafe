@@ -27,7 +27,7 @@ const About = () => (
             <div className="flex justify-center items-center">
               <img
                 src={pizzaMain}
-                alt="The founders of Tokio Ramen"
+                alt="The founders of World Cup Cafe"
                 className="rounded drop-shadow-lg"
               />
             </div>
