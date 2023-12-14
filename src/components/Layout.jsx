@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./Header";
+import Hero from "./Hero";
 
 const Layout = ({ pageTitle, children }) => {
   return (
     <>
-      <title>World Cup Cafe | {pageTitle}</title>
-      <h1>World Cup Cafe</h1>
       <Header />
+      <Hero />
     </>
   );
 };
