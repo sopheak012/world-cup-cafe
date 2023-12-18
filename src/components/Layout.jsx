@@ -3,6 +3,7 @@ import Header from "./Header";
 import Hero from "./Hero";
 import About from "./About";
 import { motion } from "framer-motion";
+import Info from "./Info";
 
 const Layout = () => {
   return (
@@ -17,6 +18,7 @@ const Layout = () => {
         viewport={{ once: true }}
       ></motion.main>
       <About />
+      <Info />
     </>
   );
 };
