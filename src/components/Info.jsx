@@ -65,7 +65,7 @@ const Info = () => (
               <div>
                 <p>(562) 481-0302</p>
               </div>
-              {/* HOURS OF OPERATION */}
+              {/* HOURS OF OPERATION. */}
               <div className="flex self-start items-center">
                 <span className="w-[20px] h-[20px] text-[#fe4039] mr-3">
                   <Clock />
