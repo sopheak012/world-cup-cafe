@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import topBorderImg from "../images/info/top-border.png";
 import btmBorderImg from "../images/info/btm-border.png";
+import pizzaImage from "../images/about/pizza-main.png";
 
 const Menu = () => {
   const [activeSection, setActiveSection] = useState("pizza"); // Default active section
@@ -10,6 +11,11 @@ const Menu = () => {
   const handleSectionChange = (section) => {
     setActiveSection(section);
   };
+
+  useEffect(() => {
+    // Set the initial active section to "pizza" on mount
+    handleSectionChange("pizza");
+  }, []);
 
   return (
     <section id="menu">
@@ -67,19 +73,70 @@ const Menu = () => {
             {/* MENU CONTENT */}
             <div className="max-w-screen-lg w-full mx-auto px-4 text-white">
               {activeSection === "pizza" && (
-                <div>
-                  {/* Placeholder content for Pizza section */}
-                  <h3 className="text-xl font-semibold mb-4">Pizza Menu</h3>
-                  <p>Placeholder content for pizza menu...</p>
+                <div className="text-white">
+                  {/* Pizza section */}
+                  <h3 className="text-3xl font-semibold mb-4">
+                    Pizza Toppings
+                  </h3>
+
+                  {/* Container for Image and Toppings */}
+                  <div className="flex flex-col items-center mb-8">
+                    {/* Image for Pizza */}
+                    <img
+                      src={pizzaImage} // Replace with your actual pizza image path
+                      alt="Pizza"
+                      className="w-64 h-64 object-cover rounded-lg mb-4"
+                    />
+
+                    {/* List of Toppings - Display 3 toppings per row */}
+                    <div className="grid grid-cols-3 gap-6">
+                      {[
+                        "Pepperoni",
+                        "Sausage",
+                        "Bacon",
+                        "Ham",
+                        "Mushroom",
+                        "Bell Pepper",
+                        "Jalapeño",
+                        "Pineapple",
+                        "Olive",
+                      ].map((topping, index) => (
+                        <div key={index} className="p-4 text-red-500">
+                          {topping}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               )}
+
               {activeSection === "sandwiches" && (
-                <div>
-                  {/* Placeholder content for Sandwiches section */}
-                  <h3 className="text-xl font-semibold mb-4">
+                <div className="text-white">
+                  {/* Sandwiches section */}
+                  <h3 className="text-3xl font-semibold mb-4">
                     Sandwiches Menu
                   </h3>
-                  <p>Placeholder content for sandwiches menu...</p>
+
+                  {/* Container for Image and Toppings */}
+                  <div className="flex flex-col items-center mb-8">
+                    {/* Placeholder Image */}
+                    <img
+                      src={pizzaImage} // Replace with your actual placeholder image path
+                      alt="Sandwich"
+                      className="w-64 h-64 object-cover rounded-lg mb-4"
+                    />
+
+                    {/* List of Toppings - Display 3 toppings per row */}
+                    <div className="grid grid-cols-3 gap-6">
+                      {["Ham", "Turkey", "Roast Beef", "Pastrami", "Tuna"].map(
+                        (topping, index) => (
+                          <div key={index} className="p-4 text-red-500">
+                            {topping}
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
                 </div>
               )}
               {activeSection === "beverages" && (
